@@ -12,12 +12,12 @@ template.set('httpcat', {
  */
 function apply(ctx, pOptions) {
   pOptions = {
-    command: 'http',
+    command: 'httpcat',
     quote: false,
     ...pOptions,
   }
   ctx
-    .command(`${command} [code:posint]`, template('httpcat.cmd.desc'))
+    .command(`${pOptions.command} [code:posint]`, template('httpcat.cmd.desc'))
     .action(({ session }, code) => {
       return `${
         pOptions.quote ? segment.quote(session.messageId) : ''
@@ -25,7 +25,11 @@ function apply(ctx, pOptions) {
     })
 }
 
+function test(p = { a: 1, b: 2 }) {
+  return p
+}
+
 module.exports = {
-  name: 'http-cat',
+  name: 'httpcat',
   apply,
 }

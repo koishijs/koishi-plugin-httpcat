@@ -1,6 +1,6 @@
 {
   "name": "koishi-plugin-httpcat",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "src/index.js",
   "repository": "git@github.com:koishijs/koishi-plugin-httpcat.git",
   "author": "机智的小鱼君 <dragon-fish@qq.com>",
