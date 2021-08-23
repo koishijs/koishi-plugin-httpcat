@@ -1,0 +1,14 @@
+{
+  "name": "koishi-plugin-httpcat",
+  "version": "0.0.1",
+  "main": "src/index.js",
+  "repository": "git@github.com:koishijs/koishi-plugin-httpcat.git",
+  "author": "机智的小鱼君 <dragon-fish@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "koishi-core": "^3.14.0"
+  },
+  "peerDependencies": {
+    "koishi-core": "^3.14.0"
+  }
+}
