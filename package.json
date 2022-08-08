@@ -1,14 +1,50 @@
 {
   "name": "koishi-plugin-httpcat",
-  "version": "0.0.2",
-  "main": "src/index.js",
-  "repository": "git@github.com:koishijs/koishi-plugin-httpcat.git",
+  "description": "Show cat images for HTTP status codes",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "dist"
+  ],
   "author": "机智的小鱼君 <dragon-fish@qq.com>",
+  "maintainers": [
+    "Shigma <shigma10826@gmail.com>"
+  ],
   "license": "MIT",
-  "devDependencies": {
-    "koishi-core": "^3.14.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koishijs/koishi-plugin-httpcat.git"
   },
+  "bugs": {
+    "url": "https://github.com/koishijs/koishi-plugin-httpcat/issues"
+  },
+  "homepage": "https://github.com/koishijs/koishi-plugin-httpcat",
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "koishi": {
+    "description": {
+      "en": "Show cat images for HTTP status codes",
+      "zh": "显示 HTTP 状态码对应的猫图"
+    }
+  },
+  "keywords": [
+    "chatbot",
+    "koishi",
+    "plugin",
+    "cat",
+    "image",
+    "picture",
+    "http",
+    "status",
+    "code"
+  ],
   "peerDependencies": {
-    "koishi-core": "^3.14.0"
+    "koishi": "^4.8.0"
+  },
+  "devDependencies": {
+    "koishi": "^4.8.4"
   }
 }
