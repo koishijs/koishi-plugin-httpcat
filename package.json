@@ -1,7 +1,7 @@
 {
   "name": "koishi-plugin-httpcat",
   "description": "Show cat images for HTTP status codes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
@@ -22,13 +22,16 @@
   },
   "homepage": "https://github.com/koishijs/koishi-plugin-httpcat",
   "scripts": {
-    "build": "tsc -b"
+    "build": "atsc -b"
   },
   "koishi": {
     "description": {
       "en": "Show cat images for HTTP status codes",
       "zh": "显示 HTTP 状态码对应的猫图"
-    }
+    },
+    "locales": [
+      "zh"
+    ]
   },
   "keywords": [
     "chatbot",
@@ -45,6 +48,9 @@
     "koishi": "^4.8.0"
   },
   "devDependencies": {
-    "koishi": "^4.8.4"
+    "@types/node": "^17.0.45",
+    "atsc": "^1.0.0",
+    "koishi": "^4.8.4",
+    "typescript": "^4.7.4"
   }
 }

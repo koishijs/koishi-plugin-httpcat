@@ -1,0 +1,5 @@
+commands:
+  httpcat:
+    description: 状态码猫图
+    messages:
+      invalid: 你家 http 协议会返回 {0}？

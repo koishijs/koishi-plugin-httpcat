@@ -19,9 +19,11 @@ export interface Config {}
 export const Config: Schema<Config> = Schema.object({})
 
 export function apply(ctx: Context) {
-  ctx.command('httpcat <code:number>', '状态码猫图', { checkArgCount: true })
-    .action(async (_, code) => {
-      if (!STATUS_CODES.includes(code)) return `你家 http 协议会返回 ${code}？`
+  ctx.i18n.define('zh', require('./locales/zh'))
+
+  ctx.command('httpcat <code:number>', { checkArgCount: true })
+    .action(async ({ session }, code) => {
+      if (!STATUS_CODES.includes(code)) return session.text('.invalid', [code])
       return segment.image(`https://http.cat/${code}`)
     })
 }
