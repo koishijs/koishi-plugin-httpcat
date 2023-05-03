@@ -17,7 +17,7 @@ export function apply(ctx: Context) {
         })
         return segment.image(buffer, 'image/jpeg')
       } catch (e) {
-        if (!Quester.isAxiosError(e) || e.code !== '404') throw e
+        if (!(Quester.isAxiosError(e) && e.code !== '404')) throw e
         return segment.i18n('.invalid', [code])
       }
     })
