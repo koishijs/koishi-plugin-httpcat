@@ -10,15 +10,14 @@ export function apply(ctx: Context) {
   ctx.i18n.define('zh', require('./locales/zh'))
 
   ctx.command('httpcat <code:number>', { checkArgCount: true })
-    .action(async ({}, code) => {
+    .action(async ({ session}, code) => {
+      const url = `https://http.cat/${code}`
       try {
-        const buffer = await ctx.http.get<ArrayBuffer>(`https://http.cat/${code}`, {
-          responseType: 'arraybuffer',
-        })
-        return segment.image(buffer, 'image/jpeg')
+        await ctx.http.head(url)
       } catch (e) {
-        if (!(Quester.isAxiosError(e) && e.code !== '404')) throw e
-        return segment.i18n('.invalid', [code])
+        if (Quester.isAxiosError(e) && e.response.status === 404) return session.text('.invalid', [code])
+        throw e
       }
+      return segment.image(url)
     })
 }
