@@ -15,7 +15,7 @@ export function apply(ctx: Context) {
       try {
         await ctx.http.head(url)
       } catch (e) {
-        if (Quester.isAxiosError(e) && e.response.status === 404) return session.text('.invalid', [code])
+        if (Quester.isAxiosError(e) && e?.response?.status === 404) return session.text('.invalid', [code])
         throw e
       }
       return segment.image(url)
